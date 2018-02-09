@@ -19,6 +19,10 @@ hr.light {
   border-color: $white;
 }
 
+hr.dark {
+  border-color: $black;
+}
+
 a {
   color: $primary;
   @include transition-all;
@@ -49,7 +53,7 @@ h6 {
 }
 
 section {
-  padding: 8rem 0;
+  padding: 3rem 0;
 }
 
 .section-heading {

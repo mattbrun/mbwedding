@@ -72,4 +72,33 @@
     }
   });
 
+  $("#DateCountdown").TimeCircles({
+    "animation": "smooth",
+    "bg_width": 0.9,
+    "fg_width": 0.027,
+    "circle_bg_color": "#60686F",
+    "time": {
+      "Days": {
+          "text": "Days",
+          "color": "#1b5e20",
+          "show": true
+      },
+      "Hours": {
+          "text": "Hours",
+          "color": "#388e3c",
+          "show": true
+      },
+      "Minutes": {
+          "text": "Minutes",
+          "color": "#4caf50",
+          "show": true
+      },
+      "Seconds": {
+          "text": "Seconds",
+          "color": "#81c784",
+          "show": true
+      }
+    }
+  });
+
 })(jQuery); // End of use strict
