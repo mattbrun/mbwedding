@@ -21,7 +21,8 @@ gulp.task('vendor', function() {
 
   // Bootstrap
   gulp.src([
-      './node_modules/bootstrap/dist/**/*',
+      './node_modules/bootstrap/dist/**/*.min.*',
+      '!./node_modules/bootstrap/dist/**/*.map',
       '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
       '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
     ])
@@ -30,6 +31,8 @@ gulp.task('vendor', function() {
   // Font Awesome
   gulp.src([
       './node_modules/font-awesome/**/*',
+      '!./node_modules/font-awesome/css/font-awesome.css',
+      '!./node_modules/font-awesome/css/font-awesome.css.map',
       '!./node_modules/font-awesome/{less,less/*}',
       '!./node_modules/font-awesome/{scss,scss/*}',
       '!./node_modules/font-awesome/.*',
@@ -39,28 +42,44 @@ gulp.task('vendor', function() {
 
   // jQuery
   gulp.src([
-      './node_modules/jquery/dist/*',
+      './node_modules/jquery/dist/*.min.*',
+      '!./node_modules/jquery/dist/*.map',
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./vendor/jquery'))
 
   // jQuery Easing
   gulp.src([
-      './node_modules/jquery.easing/*.js'
+      './node_modules/jquery.easing/jquery.easing.compatibility.js',
+      './node_modules/jquery.easing/*.min.js'
     ])
     .pipe(gulp.dest('./vendor/jquery-easing'))
 
   // Magnific Popup
   gulp.src([
-      './node_modules/magnific-popup/dist/*'
+      './node_modules/magnific-popup/dist/*.min.js',
+      './node_modules/magnific-popup/dist/*.css'
     ])
     .pipe(gulp.dest('./vendor/magnific-popup'))
 
   // Scrollreveal
   gulp.src([
-      './node_modules/scrollreveal/dist/*.js'
+      './node_modules/scrollreveal/dist/*.min.js'
     ])
     .pipe(gulp.dest('./vendor/scrollreveal'))
+
+  // TimeCircles
+  gulp.src([
+      './node_modules/timecircles/inc/TimeCircles.css',
+      './node_modules/timecircles/inc/TimeCircles.js'
+    ])
+    .pipe(gulp.dest('./vendor/timecircles'))
+
+  // Popper
+  gulp.src([
+    './node_modules/popper.js/dist/*.min.js'
+  ])
+  .pipe(gulp.dest('./vendor/popper'))
 
 });
 
